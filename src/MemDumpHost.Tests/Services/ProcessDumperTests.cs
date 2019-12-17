@@ -19,7 +19,7 @@ namespace MemDumpHost.Tests.Services
             }
         }
 
-        [Fact]
+        [SkipInAppVeyor("AppVeyor does not like me")]
         public void CanDumpSelf()
         {
             var sut = new ProcessDumper(procDumpBinaryPath);
