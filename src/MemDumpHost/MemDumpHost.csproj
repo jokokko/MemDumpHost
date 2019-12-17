@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>  
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+	<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>  
+  
+  <PropertyGroup>
+	<Authors>Joona-Pekka Kokko</Authors>
+	<PackageId>MemDumpHost</PackageId>
+    <Title>MemDumpHost</Title>
+    <PackageTags>memdump, procdump, http, endpoint</PackageTags>
+    <Description>Dump process memory via HTTP(S) (Kestrel host) endpoint &amp; ProcDump. Optionally download dumps through the endpoint etc.</Description>	
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	<PackageProjectUrl>https://github.com/jokokko/memdumphost</PackageProjectUrl>
+  </PropertyGroup>
+  
+  <ItemGroup>  
+    <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.2.7" />  
+    <PackageReference Include="Microsoft.AspNetCore.Hosting.Server.Abstractions" Version="2.2.0" />     
+    <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.2.0" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>  
+
+</Project>

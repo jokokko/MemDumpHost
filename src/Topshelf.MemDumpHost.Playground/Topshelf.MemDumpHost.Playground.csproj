@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>  
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net461</TargetFrameworks>
+	<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	<IsPackable>false</IsPackable>
+  </PropertyGroup>    
+    
+  <ItemGroup>
+    <ProjectReference Include="..\MemDumpHost\MemDumpHost.csproj" />
+    <ProjectReference Include="..\Topshelf.MemDumpHost\Topshelf.MemDumpHost.csproj" />
+	<PackageReference Include="Topshelf">
+      <Version>4.2.0</Version>
+    </PackageReference>
+  </ItemGroup>    
+    
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>  
+  
+</Project>
