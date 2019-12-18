@@ -1,7 +1,7 @@
 ﻿using System;
 using Xunit;
 
-namespace MemDumpHost.Tests.Services
+namespace MemDumpHost.Tests.Infrastructure
 {
     // From: https://josephwoodward.co.uk/2019/01/skipping-xunit-tests-based-on-runtime-conditions
     public sealed class SkipInAppVeyor : FactAttribute

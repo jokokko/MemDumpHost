@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.Net.Http;
 using MemDumpHost.Services;
+using MemDumpHost.Tests.Infrastructure;
 using Xunit;
 
 namespace MemDumpHost.Tests.Services

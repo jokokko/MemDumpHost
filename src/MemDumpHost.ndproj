@@ -5,20 +5,7 @@
     <IDEFile FilePath=".\MemDumpHost.sln" Filters="-test -Playground" Configuration="DEBUG|AnyCPU" />
   </IDEFiles>
   <Assemblies />
-  <FrameworkAssemblies>
-    <Name>netstandard</Name>
-    <Name>Topshelf</Name>
-    <Name>Microsoft.AspNetCore.Hosting.Abstractions</Name>
-    <Name>Microsoft.Extensions.DependencyInjection.Abstractions</Name>
-    <Name>Microsoft.Extensions.Configuration.Abstractions</Name>
-    <Name>Microsoft.AspNetCore.Http.Abstractions</Name>
-    <Name>Microsoft.AspNetCore.Hosting</Name>
-    <Name>Microsoft.AspNetCore.Server.Kestrel</Name>
-    <Name>Microsoft.Extensions.Configuration</Name>
-    <Name>Microsoft.Extensions.Configuration.FileExtensions</Name>
-    <Name>Microsoft.Extensions.Configuration.EnvironmentVariables</Name>
-    <Name>Microsoft.AspNetCore.Http.Extensions</Name>
-  </FrameworkAssemblies>
+  <FrameworkAssemblies />
   <Dirs>
     <Dir>C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319</Dir>
     <Dir>C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\WPF</Dir>    

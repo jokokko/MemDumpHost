@@ -12,6 +12,7 @@ namespace MemDumpHost.Model
         public string DumpArgs { get; private set; }
         public Regex DumpDownloadRegex { get; private set; }
         public string ProcDumpDownloadUri { get; private set; }
+        public Action<Exception> IgnoreStartupFailure { get; private set; }
         public DumpEndpointSettings UseUrl(string url)
         {
             Url = url;
@@ -75,6 +76,12 @@ namespace MemDumpHost.Model
         public DumpEndpointSettings DownloadProcDump(string downloadUri = "https://live.sysinternals.com/procdump.exe")
         {
             ProcDumpDownloadUri = downloadUri;
+            return this;
+        }
+
+        public DumpEndpointSettings SwallowStartupFailure(Action<Exception> onException = null)
+        {
+            IgnoreStartupFailure = onException ?? (e => { });
             return this;
         }
     }

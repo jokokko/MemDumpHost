@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Text.RegularExpressions;
 using MemDumpHost.Model;
 using Microsoft.AspNetCore.Builder;
@@ -16,10 +15,13 @@ namespace MemDumpHost.Services
     public sealed class Startup
     {
         private readonly DumpEndpointSettings settings;
+        private readonly ProcessDumper dumper;
 
-        public Startup(IHostingEnvironment env, DumpEndpointSettings settings)
+        public Startup(IHostingEnvironment env, DumpEndpointSettings settings, ProcessDumper dumper)
         {
             this.settings = settings;
+            this.dumper = dumper;
+            
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath);
 
@@ -33,20 +35,6 @@ namespace MemDumpHost.Services
 
         public void Configure(IApplicationBuilder app)
         {
-            var procDumpBinaryPath = settings.ProcDumpPath;
-
-            if (!string.IsNullOrEmpty(settings.ProcDumpDownloadUri))
-            {
-                using (var client = new HttpClient())
-                {
-                    var procDumpBytes = client.GetByteArrayAsync(settings.ProcDumpDownloadUri).Result;
-                    procDumpBinaryPath = Path.Combine(Path.GetTempPath(), "procdump.exe");
-                    File.WriteAllBytes(procDumpBinaryPath, procDumpBytes);
-                }
-            }
-
-            var dumper = !string.IsNullOrEmpty(procDumpBinaryPath) ? new ProcessDumper(procDumpBinaryPath) : new ProcessDumper();
-
             var path = settings.PathGuid.HasValue ? $"/dump/{settings.PathGuid.Value}" : "/dump";
 
             var enableDownloads = settings.DumpDownloadRegex != null;

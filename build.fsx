@@ -10,7 +10,7 @@ open Fake.IO.Globbing.Operators
 open Fake.Core.TargetOperators
 open Fake.DotNet.Testing
 
-let version = "1.0.0"
+let version = "1.1.0"
 let solutionFile = "./src/MemDumpHost.sln"
 let buildMode =
     DotNet.BuildConfiguration.fromString

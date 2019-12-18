@@ -23,6 +23,7 @@ namespace Topshelf.MemDumpHost.Playground
                             .EnableDumpDownload()
                             .DumpToDirectory(@"c:\temp")
                             .UseUrl("http://*:8080")
+                            .SwallowStartupFailure(Console.WriteLine)
                             .RandomGuidInEndpointPath()
                             // Or .RandomGuidInEndpointPath(Guid.Parse("B80B3FFF-EF23-4D7A-A1DF-A93F7A979177"))
                             .DumpUsingArguments(a => a.FullDump().DumpUsingClone().AcceptEula());
